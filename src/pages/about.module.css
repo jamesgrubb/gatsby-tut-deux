@@ -1,0 +1,54 @@
+.user {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 1vmin;
+}
+
+.user > .avatar {
+  --width: 20vmin;
+  width: var(--width);
+  height: calc(var(--width) * 1 / 1);
+  display: grid;
+  border-right: 1px dotted rgba(0, 0, 0, 0.3);
+  background: plum;
+  place-items: center;
+}
+
+.user > .avatar > .imageWrapper {
+  --width: 80%;
+  width: var(--width);
+  height: calc(var(--width) * 1 / 1);
+  display: grid;
+  place-items: center;
+  outline: 4px dotted red;
+}
+
+.user > .avatar > .imageWrapper > img {
+  width: 50%;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  border-radius: 50%;
+}
+
+.user > .description {
+  margin: 2vmin;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media all and (max-width: 400px) {
+  .user {
+    grid-template-columns: repeat(auto-fit, minmax(30vmin, 300px));
+  }
+}
